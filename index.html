@@ -1,63 +1,47 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-  
-<h1>Hola Mundo</h1>
-  <h3>Bienvenido a Sumset Luis Esteban Arango Sanchez</h3>
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-	 var cont = 0;
-      // Load the Visualization API and the piechart package.
-      google.load('visualization', '1.0', {'packages':['corechart']});
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.setOnLoadCallback(drawChart);
-
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
-		
-		//alert(cont);
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-		
-		if(cont%2==0){
-			data.addRows([
-			  ['IE6', 5],
-			  ['IE7', 20],
-			  ['IE8', 75]
-			]);
-		}else{
-			data.addRows([
-			  ['IE6', 50],
-			  ['IE7', 40],
-			  ['IE8', 10]
-			]);
-		}
-
-        // Set chart options
-        var options = {'title':'Estos son los datos del pie chart',
-                       'width':400,
-                       'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-	  
-	  function cambiarPie(){
-		  cont++;
-		  drawChart()
-	  }
-    </script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
-  <input type="button" value="Clic aqui" onclick="cambiarPie()">
 
-  <body>
-    <!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
+  <body class="grey lighten-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l4 m12 s12 sidebar">
+          <div class="card orange lighten-1">
+            <div class="card-image">
+              <img src="https://image.freepik.com/vector-gratis/fondo-geometrico-con-texto-de-proximamente_1017-5069.jpg">
+              <span class="card-title">Luis Esteban Arango Sanchez</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col l8 m12 s12">
+          <div class="card-panel">
+            <span class="blue-text text-darken-2">This is a card panel with dark blue text</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </body>
 </html>
