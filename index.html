@@ -34,15 +34,21 @@
     .container-main{
       margin-top: 1em;
     }
+    .container .row {
+        margin-left: 0rem;
+    }
     .card-panel-custom.card-panel{
       padding:  0px !important;
     }
     .card-panel .fa{
       font-size: 40px;
-      padding-left: 30px;
       margin-top: 40px;
     }
+    .card-panel .ficon {
+      text-align: center;
+    }
     .custom-content{
+      margin-right: 1em;
       margin-bottom: 25px;
     }
     .custom-content.custom-content-border {
@@ -67,6 +73,17 @@
       margin-top: 0px;
       margin-bottom: 25px;
     }
+
+      @media only screen and (max-width: 992px) {
+        .custom-content {
+          padding: 2em;
+          padding-top: 0em;
+          text-align: center;
+        }
+        .card-panel .fa {
+          padding-left: 0px !important;
+        }
+      }
     </style>
   </head>
 
@@ -81,7 +98,7 @@
             </div>
             <div class="card-content">
               <div class="row">
-                <div class="col l2">
+                <div class="col l2 ficon">
                   <i class="fa fa-user" aria-hidden="true"></i>
                 </div>
                 <div class="col l10 white-text">
@@ -94,12 +111,12 @@
         </div>
 
         <div class="col l8 m12 s12">
-          <div class="card-panel card-panel-custom">
+          <div class="card-panel card-panel-custom card-work-experience">
             <div class="row">
-              <div class="col l2">
+              <div class="col l2 m12 s12 ficon">
                 <i class="fa fa-suitcase fa-2x" aria-hidden="true"></i>
               </div>
-              <div class="col l10">
+              <div class="col l10 m12 s12">
                 <div class="custom-content custom-content-border">
                   <h2>Work Experience</h2>
                   <h3>UI/UX Designer @Academy</h3>
@@ -114,7 +131,28 @@
               </div>
               <br>
             </div>
+          </div>
 
+          <div class="card-panel card-panel-custom card-education">
+            <div class="row">
+              <div class="col l2 m12 s12 ficon">
+                <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>
+              </div>
+              <div class="col l10 m12 s12">
+                <div class="custom-content custom-content-border">
+                  <h2>Education</h2>
+                  <h3>UI/UX Designer @Academy</h3>
+                  <span>JAN 2013 - DEC 2013 </span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="custom-content">
+                  <h3>UI/UX Designer @Academy</h3>
+                  <span>JAN 2013 - DEC 2013 </span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+              <br>
+            </div>
           </div>
 
         </div>
@@ -126,5 +164,14 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script>
+        var options = [
+          {selector: '.card-work-experience', offset: 0, callback: function(el) { Materialize.fadeInImage($(el)); } },
+          {selector: '.card-education', offset: 0, callback: function(el) { Materialize.fadeInImage($(el)); } } ];
+
+        Materialize.scrollFire(options);
+
+    </script>
   </body>
 </html>
